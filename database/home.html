@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kulturifiko</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <style>
+        /* General Reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: #f7f7f7;
+            color: #4A4947;
+            line-height: 1.6;
+            padding-top: 80px;
+        }
+
+        /* Navigation Bar */
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: #365486;
+            padding: 20px 40px;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .navbar img {
+            height: 50px;
+            width: auto;
+        }
+
+        .navbar h1 {
+            color: #DCF2F1;
+            font-size: 2rem;
+            font-weight: 600;
+            margin-left: 10px;
+        }
+
+        .navbar a {
+            color: #DCF2F1;
+            text-decoration: none;
+            margin: 0 15px;
+            font-size: 1.2rem;
+            font-weight: 600;
+            padding: 10px 20px;
+            border-radius: 30px;
+            transition: background-color 0.3s ease, color 0.3s ease;
+        }
+
+        .navbar a:hover {
+            background-color: #7FC7D9;
+            color: #0F1035;
+        }
+
+        .navbar a.active {
+            background-color: #B17457;
+            color: #fff;
+        }
+
+     /* Where To Section */
+.where-to {
+    text-align: center;
+    padding: 60px 20px;
+    margin: 20px;
+    background: linear-gradient(135deg, #7FC7D9, #365486);
+    color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+}
+
+.where-to h1 {
+    font-size: 2.8rem;
+    font-weight: 600;
+    margin-bottom: 30px;
+}
+
+.where-to .search-bar {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+}
+
+.where-to input[type="text"] {
+    padding: 12px;
+    font-size: 1rem;
+    border-radius: 30px;
+    border: none;
+    outline: none;
+    width: 250px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.where-to button {
+    padding: 12px 20px;
+    font-size: 1rem;
+    border-radius: 30px;
+    border: none;
+    outline: none;
+    background-color: #7FC7D9;
+    color: #fff;
+    cursor: pointer;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.where-to button:hover {
+    transform: scale(1.05);
+}
+
+
+        /* About Section */
+        .about {
+            text-align: center;
+            padding: 60px 20px;
+            background-color: #fff;
+            margin: 20px;
+            border-radius: 10px;
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+        }
+
+        .about h1 {
+            font-size: 2.8rem;
+            color: #365486;
+            margin-bottom: 20px;
+            font-weight: 600;
+        }
+
+        .about p {
+            font-size: 1.2rem;
+            color: #4A4947;
+            line-height: 1.8;
+            margin-bottom: 40px;
+        }
+
+        /* Blog Preview Section */
+        .blog-preview {
+            text-align: center;
+            padding: 60px 20px;
+            margin: 20px;
+        }
+
+        .blog-preview h1 {
+            font-size: 2.8rem;
+            color: #365486;
+            margin-bottom: 40px;
+            font-weight: 600;
+        }
+
+        .blog-preview .blogs {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            flex-wrap: wrap;
+        }
+
+        .blog-card {
+            background-color: #fff;
+            border-radius: 10px;
+            width: 300px;
+            padding: 25px;
+            text-align: left;
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+        }
+
+        .blog-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+        }
+
+        .blog-card h2 {
+            font-size: 1.8rem;
+            color: #0F1035;
+            margin-bottom: 15px;
+            font-weight: 600;
+        }
+
+        .blog-card p {
+            font-size: 1rem;
+            color: #4A4947;
+        }
+
+        /* Events Section */
+        .events {
+            text-align: center;
+            padding: 60px 20px;
+            background-color: #7FC7D9;
+            margin: 20px;
+            border-radius: 10px;
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+        }
+
+        .events h1 {
+            font-size: 2.8rem;
+            color: #fff;
+            margin-bottom: 40px;
+            font-weight: 600;
+        }
+
+        .events-content {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 30px;
+        }
+
+        .event {
+            background-color: #fff;
+            border-radius: 10px;
+            width: 300px;
+            padding: 25px;
+            text-align: left;
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+        }
+
+        .event:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+        }
+
+        .event h2 {
+            font-size: 1.8rem;
+            color: #0F1035;
+            margin-bottom: 15px;
+            font-weight: 600;
+        }
+
+        .event p {
+            font-size: 1rem;
+            color: #4A4947;
+        }
+
+        .event img {
+            width: 100%;
+            height: auto;
+            border-radius: 10px;
+            margin-bottom: 15px;
+        }
+
+        /* Footer */
+        footer {
+            background-color: #365486;
+            color: #fff;
+            text-align: center;
+            padding: 25px;
+            margin-top: 60px;
+        }
+
+    </style>
+</head>
+<body>
+
+    <!-- Navigation Bar -->
+    <div class="navbar">
+        <div style="display: flex; align-items: center;">
+            <img src="https://scontent.xx.fbcdn.net/v/t1.15752-9/462567709_1724925585031052_4490126238712417040_n.png?_nc_cat=109&ccb=1-7&_nc_sid=0024fc&_nc_ohc=aXcrO29n7uIQ7kNvgHCi3nC&_nc_ad=z-m&_nc_cid=0&_nc_zt=23&_nc_ht=scontent.xx&oh=03_Q7cD1QEYs_r8YD6E0edmvQDXiy__0n-15fylEZhQIi5GI1RD2Q&oe=676A986A" alt="Kulturifiko Logo">
+            <h1>Kulturifiko</h1>
+        </div>
+        <div>
+            <a href="home.html" class="active">Home</a>
+            <a href="blogging-platform.html">Blogging Platform</a>
+            <a href="#">Leaderboard</a>
+            <a href="#">Cultural Database</a>
+            <a href="#">Settings</a>
+            <a href="login.html">Log In</a>
+        </div>
+    </div>
+
+<!-- Where To Section -->
+<div class="where-to">
+    <h1>Where To?</h1>
+    <div class="search-bar">
+        <input type="text" placeholder="Search..." />
+        <button>Search</button>
+    </div>
+</div>
+
+    <!-- About Section -->
+    <div class="about">
+        <h1>About Kulturifiko</h1>
+        <div class="about-logo">
+            <img src="https://scontent.xx.fbcdn.net/v/t1.15752-9/462567709_1724925585031052_4490126238712417040_n.png?_nc_cat=109&ccb=1-7&_nc_sid=0024fc&_nc_ohc=aXcrO29n7uIQ7kNvgHCi3nC&_nc_ad=z-m&_nc_cid=0&_nc_zt=23&_nc_ht=scontent.xx&oh=03_Q7cD1QEYs_r8YD6E0edmvQDXiy__0n-15fylEZhQIi5GI1RD2Q&oe=676A986A" alt="Kulturifiko Logo" />
+        </div>
+        <p>At Kulturifiko, we believe in the power of cultural exchange and understanding. Our platform connects people from around the world, offering a space to discover diverse cultural experiences, events, and communities.</p>
+    </div>
+
+    <!-- Blog Preview Section -->
+    <div class="blog-preview">
+        <h1>Latest Cultural Insights</h1>
+        <div class="blogs">
+            <div class="blog-card">
+                <h2>The Beauty of Traditional Dance</h2>
+                <p>Discover the significance of traditional dances from around the world and their cultural importance.</p>
+            </div>
+            <div class="blog-card">
+                <h2>Food Festivals You Can't Miss</h2>
+                <p>From the streets of Thailand to the markets of Italy, explore the world of food festivals.</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Events Section -->
+    <div class="events">
+        <h1>Global Cultural Events</h1>
+        <div class="events-content">
+            <div class="event">
+                <img src="https://via.placeholder.com/300" alt="Event">
+                <h2>Sinulog Festival</h2>
+                <p>Experience the grand celebration in Cebu, Philippines.</p>
+            </div>
+            <div class="event">
+                <img src="https://via.placeholder.com/300" alt="Event">
+                <h2>Oktoberfest</h2>
+                <p>Enjoy the world-famous beer festival in Munich, Germany.</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2024 Kulturifiko. All Rights Reserved.</p>
+    </footer>
+
+</body>
+</html>
