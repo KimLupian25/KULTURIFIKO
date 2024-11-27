@@ -5,8 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Kulturifiko</title>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <body>
     <style>
-        /* General Reset */
+    /* General */
         * {
             margin: 0;
             padding: 0;
@@ -15,58 +16,142 @@
 
         body {
             font-family: 'Poppins', sans-serif;
-            background-color: #DCF2F1; /* Light background color */
+            background-color: #f7f7f7;
             color: #4A4947;
             line-height: 1.6;
             padding-top: 80px;
         }
 
-        /* Navigation Bar */
+        section {
+            padding: 50px 20px;
+            background-color: #f9f9f9;
+        }
+
+        h2 {
+           font-size: 2rem;
+           margin-bottom: 10px;
+           color: #333;
+        }
+    </style>
+    
+    <!-- Navigation Bar -->
+    <div class="navbar">
+        <div style="display: flex; align-items: center;">
+            <img src="https://scontent.xx.fbcdn.net/v/t1.15752-9/462567709_1724925585031052_4490126238712417040_n.png?_nc_cat=109&ccb=1-7&_nc_sid=0024fc&_nc_ohc=aXcrO29n7uIQ7kNvgHCi3nC&_nc_ad=z-m&_nc_cid=0&_nc_zt=23&_nc_ht=scontent.xx&oh=03_Q7cD1QEYs_r8YD6E0edmvQDXiy__0n-15fylEZhQIi5GI1RD2Q&oe=676A986A" alt="Kulturifiko Logo">
+            <h1>Kulturifiko</h1>
+        </div>
+        <div>
+            <a href="home.html" class="active">Home</a>
+            <a href="blogging-platform.html">Blogging Platform</a>
+            <a href="#">Leaderboard</a>
+            <a href="#">Cultural Database</a>
+            <a href="store.html">Store</a>
+            <div class="dropdown">
+                <a href="#" class="dropdown-btn" onclick="toggleDropdown()">Menu ▼</a>
+                <div class="dropdown-content">
+                    <a href="#">Profile</a>
+                    <a href="#">Settings</a>
+                    <a href="#">Logout</a>
+                </div>
+            </div>
+            <a href="login.html">Log In</a>
+        </div>
+    </div>
+
+    <style>
+    /* Navigation Bar */
         .navbar {
             display: flex;
-            justify-content: space-between; /* Space between logo and text */
+            justify-content: space-between;
             align-items: center;
-            background-color: #365486; /* Darker blue for navigation */
-            padding: 15px 20px;
+            background-color: #365486;
+            padding: 20px 40px;
             position: fixed;
             width: 100%;
             top: 0;
             z-index: 1000;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
         }
 
         .navbar img {
-            height: 40px; /* Adjust the size of the logo */
+            height: 50px;
             width: auto;
         }
 
         .navbar h1 {
-            color: #DCF2F1; /* Light color for title */
-            font-size: 1.8rem;
+            color: #DCF2F1;
+            font-size: 2rem;
             font-weight: 600;
             margin-left: 10px;
         }
 
         .navbar a {
-            color: #DCF2F1; /* Light color for navigation items */
+            color: #DCF2F1;
             text-decoration: none;
             margin: 0 15px;
-            font-size: 1.1rem;
-            font-weight: 600;
-            padding: 10px 15px;
-            border-radius: 5px;
-            transition: all 0.3s ease;
+            font-size: 1rem;
+            font-weight: 500;
+            padding: 10px 20px;
+            border-radius: 30px;
+            transition: background-color 0.3s ease, color 0.3s ease;
         }
 
         .navbar a:hover {
-            color: #0F1035; /* Dark text color on hover */
-            background-color: #7FC7D9; /* Light blue background on hover */
-            transform: scale(1.05);
+            background-color: #7FC7D9;
+            color: #0F1035;
         }
 
         .navbar a.active {
-            color: #B17457;
+            background-color: #000;
+            color: #fff;
+        }
+        
+    /* Dropdown */
+        .dropdown {
+            position: relative;
+            display: inline-block;
         }
 
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: white;
+            min-width: 150px;
+            box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+            z-index: 1;
+            border-radius: 4px;
+        }
+
+        .dropdown-content a {
+            color: black;
+            padding: 10px 15px;
+            text-decoration: none;
+            display: block;
+            border-bottom: 1px solid #ddd;
+        }
+
+        .dropdown-content a:last-child {
+            border-bottom: none;
+        }
+
+        .dropdown-content a:hover {
+            background-color: #f1f1f1;
+        }
+
+    /* Toggle class for show/hide */
+        .show {
+            display: block;
+        }
+    </style>
+
+    <script>
+        function toggleDropdown() {
+            var dropdownContent = document.querySelector(".dropdown-content");
+            dropdownContent.classList.toggle("show");
+        }
+    </script>
+
+<style>
         /* Post Section */
         .post-section {
             width: 100%;
@@ -202,22 +287,6 @@
     </style>
 </head>
 <body>
-
-   <!-- Navigation Bar -->
-   <div class="navbar">
-    <div style="display: flex; align-items: center;">
-        <img src="https://scontent.xx.fbcdn.net/v/t1.15752-9/462567709_1724925585031052_4490126238712417040_n.png?_nc_cat=109&ccb=1-7&_nc_sid=0024fc&_nc_ohc=aXcrO29n7uIQ7kNvgHCi3nC&_nc_ad=z-m&_nc_cid=0&_nc_zt=23&_nc_ht=scontent.xx&oh=03_Q7cD1QEYs_r8YD6E0edmvQDXiy__0n-15fylEZhQIi5GI1RD2Q&oe=676A986A" alt="Kulturifiko Logo">
-        <h1>Kulturifiko</h1>
-    </div>
-    <div>
-        <a href="home.html">Home</a>
-        <a href="blogging-platform.html" class="active">Blogging Platform</a>
-        <a href="#">Leaderboard</a>
-        <a href="#">Cultural Database</a>
-        <a href="#">Settings</a>
-        <a href="login.html">Log In</a>
-    </div>
-</div>
 
     <!-- Post Section -->
     <div class="post-section">

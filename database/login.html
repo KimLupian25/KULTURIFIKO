@@ -6,7 +6,7 @@
     <title>Kulturifiko</title>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
     <style>
-        /* General Reset */
+        /* General */
         * {
             margin: 0;
             padding: 0;
@@ -15,13 +15,144 @@
 
         body {
             font-family: 'Poppins', sans-serif;
-            background-color: #f7f7f7;
-            color: #4A4947;
-            line-height: 1.6;
-            padding-top: 80px;
+            background-image: url('https://socialstudieshelp.com/wp-content/uploads/2024/02/Exploring-the-Cultural-Diversity-of-Europe.webp');
+            background-size: cover;
+            background-position: center;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+    
+        .main-container {
+            flex-grow: 1;
+            display: flex;
+            justify-content: center;
+            align-items: center;
         }
 
-        /* Navigation Bar */
+        .login-container {
+            background-color: rgba(255, 255, 255, 0.8); /* Semi-transparent background */
+            padding: 40px;
+            border-radius: 15px;
+            width: 100%;
+            max-width: 400px;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+        }
+
+        h2 {
+            font-size: 2rem;
+            margin-bottom: 20px;
+            text-align: center;
+            color: #333;
+        }
+
+        .input-container {
+            margin-bottom: 15px;
+            position: relative;
+        }
+
+        .input-container input {
+            width: 100%;
+            padding: 15px;
+            border: 2px solid #ddd;
+            border-radius: 10px;
+            font-size: 1rem;
+            outline: none;
+            transition: border 0.3s ease;
+            background-color: #f9f9f9;
+        }
+
+        .input-container input:focus {
+            border-color: #4a6ea5;
+        }
+
+        .remember-forgot {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 0.9rem;
+            margin-bottom: 15px;
+        }
+
+        .remember-forgot label {
+            color: #777;
+        }
+
+        .remember-forgot a {
+            color: #4a6ea5;
+            text-decoration: none;
+        }
+
+        .remember-forgot a:hover {
+            text-decoration: underline;
+        }
+
+        .login-btn {
+            width: 100%;
+            padding: 15px;
+            background-color: #4a6ea5;
+            color: white;
+            border: none;
+            border-radius: 10px;
+            font-size: 1.1rem;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .login-btn:hover {
+            background-color: #1c3d8c;
+        }
+
+        .signup-link {
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        .signup-link a {
+            color: #4a6ea5;
+            text-decoration: none;
+        }
+
+        .signup-link a:hover {
+            text-decoration: underline;
+        }
+
+        /* Footer */
+        footer {
+            background-color: #365486;
+            color: #fff;
+            text-align: center;
+            padding: 25px;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <div class="navbar">
+        <div style="display: flex; align-items: center;">
+            <img src="https://scontent.xx.fbcdn.net/v/t1.15752-9/462567709_1724925585031052_4490126238712417040_n.png?_nc_cat=109&ccb=1-7&_nc_sid=0024fc&_nc_ohc=aXcrO29n7uIQ7kNvgHCi3nC&_nc_ad=z-m&_nc_cid=0&_nc_zt=23&_nc_ht=scontent.xx&oh=03_Q7cD1QEYs_r8YD6E0edmvQDXiy__0n-15fylEZhQIi5GI1RD2Q&oe=676A986A" alt="Kulturifiko Logo">
+            <h1>Kulturifiko</h1>
+        </div>
+        <div>
+            <a href="home.html" class="active">Home</a>
+            <a href="blogging-platform.html">Blogging Platform</a>
+            <a href="#">Leaderboard</a>
+            <a href="#">Cultural Database</a>
+            <a href="store.html">Store</a>
+            <div class="dropdown">
+                <a href="#" class="dropdown-btn" onclick="toggleDropdown()">Menu ▼</a>
+                <div class="dropdown-content">
+                    <a href="#">Profile</a>
+                    <a href="#">Settings</a>
+                    <a href="#">Logout</a>
+                </div>
+            </div>
+            <a href="login.html">Log In</a>
+        </div>
+    </div>
+
+    <style>
+    /* Navigation Bar */
         .navbar {
             display: flex;
             justify-content: space-between;
@@ -51,8 +182,8 @@
             color: #DCF2F1;
             text-decoration: none;
             margin: 0 15px;
-            font-size: 1.2rem;
-            font-weight: 600;
+            font-size: 1rem;
+            font-weight: 500;
             padding: 10px 20px;
             border-radius: 30px;
             transition: background-color 0.3s ease, color 0.3s ease;
@@ -64,211 +195,80 @@
         }
 
         .navbar a.active {
-            background-color: #B17457;
+            background-color: #000;
             color: #fff;
         }
-
-        /* Mobile Menu */
-        .hamburger {
-            display: none;
-        }
-
-        @media (max-width: 768px) {
-            .hamburger {
-                display: block;
-                font-size: 30px;
-                cursor: pointer;
-            }
-
-            nav ul {
-                display: none;
-                text-align: left;
-            }
-
-            nav ul li {
-                display: block;
-                margin: 10px 0;
-            }
-
-            nav.active ul {
-                display: block;
-            }
-        }
-
-        /* Login Form Container */
-        .login-container {
-            background-color: #fff;
-            padding: 40px 50px;
-            border-radius: 10px;
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
-            width: 100%;
-            max-width: 400px;
-            text-align: center;
-            margin-top: 100px;
-        }
-
-        h2 {
-            color: #365486;
-            margin-bottom: 30px;
-            font-size: 2rem;
-            font-weight: 600;
-        }
-
-        /* Input Field Styles */
-        .input-group {
+        
+    /* Dropdown */
+        .dropdown {
             position: relative;
-            margin-bottom: 20px;
+            display: inline-block;
         }
 
-        .input-group input,
-        .input-group select {
-            width: 100%;
-            padding: 15px 20px;
-            margin-top: 8px;
-            border: 1px solid #ccc;
-            border-radius: 5px;
-            font-size: 16px;
-            outline: none;
-            transition: 0.3s;
-        }
-
-        .input-group input:focus,
-        .input-group select:focus {
-            border-color: #365486;
-        }
-
-        .input-group label {
+        .dropdown-content {
+            display: none;
             position: absolute;
-            top: -10px;
-            left: 20px;
-            font-size: 14px;
-            color: #365486;
-            background-color: #fff;
-            padding: 0 5px;
-            transition: 0.3s;
+            background-color: white;
+            min-width: 150px;
+            box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+            z-index: 1;
+            border-radius: 4px;
         }
 
-        .input-group input:focus + label,
-        .input-group select:focus + label {
-            top: -20px;
-            font-size: 12px;
+        .dropdown-content a {
+            color: black;
+            padding: 10px 15px;
+            text-decoration: none;
+            display: block;
+            border-bottom: 1px solid #ddd;
         }
 
-        .login-btn {
-            width: 100%;
-            padding: 15px;
-            background: linear-gradient(135deg, #365486, #7FC7D9);
-            color: #fff;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-            font-size: 18px;
-            transition: 0.3s;
+        .dropdown-content a:last-child {
+            border-bottom: none;
         }
 
-        .login-btn:hover {
-            background: linear-gradient(135deg, #7FC7D9, #365486);
+        .dropdown-content a:hover {
+            background-color: #f1f1f1;
         }
 
-        /* Mobile Responsiveness */
-        @media (max-width: 480px) {
-            .login-container {
-                padding: 30px;
-                max-width: 90%;
-            }
-
-            h2 {
-                font-size: 1.8rem;
-            }
-
-            .login-btn {
-                font-size: 16px;
-            }
-        }
-
-        /* Footer */
-        footer {
-            background-color: #365486;
-            color: #fff;
-            text-align: center;
-            padding: 25px;
-            margin-top: 60px;
+    /* Toggle class for show/hide */
+        .show {
+            display: block;
         }
     </style>
-</head>
-<body>
-
-    <!-- Navigation Bar -->
-    <div class="navbar">
-        <div style="display: flex; align-items: center;">
-            <img src="https://scontent.xx.fbcdn.net/v/t1.15752-9/462567709_1724925585031052_4490126238712417040_n.png?_nc_cat=109&ccb=1-7&_nc_sid=0024fc&_nc_ohc=aXcrO29n7uIQ7kNvgHCi3nC&_nc_ad=z-m&_nc_cid=0&_nc_zt=23&_nc_ht=scontent.xx&oh=03_Q7cD1QEYs_r8YD6E0edmvQDXiy__0n-15fylEZhQIi5GI1RD2Q&oe=676A986A" alt="Kulturifiko Logo">
-            <h1>Kulturifiko</h1>
-        </div>
-        <div>
-            <a href="home.html">Home</a>
-            <a href="blogging-platform.html">Blogging Platform</a>
-            <a href="#">Leaderboard</a>
-            <a href="#">Cultural Database</a>
-            <a href="#">Settings</a>
-            <a href="login.html" class="active">Log In</a>
-        </div>
-    </div>
-
-    <!-- Login Form Container -->
-    <div class="login-container">
-        <h2>Sign In</h2>
-        <form action="#" method="post">
-            <!-- Username -->
-            <div class="input-group">
-                <input type="text" id="username" name="username" required>
-                <label for="username">Username</label>
-            </div>
-
-            <!-- Email -->
-            <div class="input-group">
-                <input type="email" id="email" name="email" required>
-                <label for="email">Email</label>
-            </div>
-
-            <!-- Password -->
-            <div class="input-group">
-                <input type="password" id="password" name="password" required>
-                <label for="password">Password</label>
-            </div>
-
-            <!-- Confirm Password -->
-            <div class="input-group">
-                <input type="password" id="confirm-password" name="confirm-password" required>
-                <label for="confirm-password">Confirm Password</label>
-            </div>
-
-            <!-- Country Code and Phone Number -->
-            <div class="input-group">
-                <select id="country-code" name="country-code" required>
-                    <option value="">Country</option>
-                    <option value="+1">+1 (US)</option>
-                    <option value="+44">+44 (UK)</option>
-                    <option value="+91">+91 (India)</option>
-                    <!-- Add more countries here -->
-                </select>
-                <input type="tel" id="phone" name="phone" pattern="[0-9]{10}" required placeholder="Phone Number">
-            </div>
-
-            <!-- Submit Button -->
-            <button type="submit" class="login-btn">Sign Up</button>
-        </form>
-    </div>
 
     <script>
-        // Toggle menu for mobile screens
-        function toggleMenu() {
-            const nav = document.querySelector('nav');
-            nav.classList.toggle('active');
+        function toggleDropdown() {
+            var dropdownContent = document.querySelector(".dropdown-content");
+            dropdownContent.classList.toggle("show");
         }
     </script>
- <!-- Footer -->
- <footer>
-    <p>&copy; 2024 Kulturifiko. All Rights Reserved.</p>
-</footer>
+
+
+    <!-- Main Content -->
+    <div class="main-container">
+        <div class="login-container">
+            <h2>Login</h2>
+            <div class="input-container">
+                <input type="text" placeholder="Username">
+            </div>
+            <div class="input-container">
+                <input type="password" placeholder="Password">
+            </div>
+            <div class="remember-forgot">
+                <label><input type="checkbox"> Remember me</label>
+                <a href="#">Forgot password?</a>
+            </div>
+            <button class="login-btn">Login</button>
+            <div class="signup-link">
+                <p>Don't have an account? <a href="#">Create Account</a></p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <p>Copyright &copy; 2024 Kulturifiko. All rights reserved.</p>
+    </footer>
 </body>
 </html>
